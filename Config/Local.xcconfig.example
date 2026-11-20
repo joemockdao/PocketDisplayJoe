@@ -1,0 +1,7 @@
+// Copia questo file in Config/Local.xcconfig e inserisci i tuoi valori.
+// Team ID: https://developer.apple.com/account  →  Membership details (basta un Apple ID gratuito, da Xcode → Settings → Accounts).
+DEVELOPMENT_TEAM = ABCDE12345
+
+// Prefisso univoco: gli identificativi delle app diventano <prefisso>.mac / .phone / .tests.
+// Deve essere diverso da quelli di altri sviluppatori (es. il tuo dominio al contrario).
+BUNDLE_ID_PREFIX = com.tuonome.pocketdisplay

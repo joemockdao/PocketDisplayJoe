@@ -1,0 +1,13 @@
+# Xcode / build
+*.xcodeproj/xcuserdata
+# Il progetto Xcode si rigenera con `xcodegen generate`
+PocketDisplayJoe.xcodeproj/
+DerivedData/
+.build/
+.DS_Store
+
+# Valori personali (Team Apple, identificativo)
+Config/Local.xcconfig
+
+# Documento di lavoro dell'autore: non fa parte del repository
+SPECIFICHE_E_STORICO.md

@@ -1,0 +1,6 @@
+// Impostazioni del progetto condivise. I valori personali (Team Apple, identificativo) NON vanno qui:
+// copia Config/Local.xcconfig.example in Config/Local.xcconfig (ignorato da git) e compilalo.
+BUNDLE_ID_PREFIX = com.example.pocketdisplay
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

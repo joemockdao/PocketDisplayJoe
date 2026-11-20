@@ -1,0 +1,72 @@
+name: PocketDisplayJoe
+options:
+  bundleIdPrefix: com.example.pocketdisplay
+  deploymentTarget: { iOS: "17.0", macOS: "14.0" }
+  createIntermediateGroups: true
+  developmentLanguage: en
+configFiles:
+  Debug: Config/Base.xcconfig
+  Release: Config/Base.xcconfig
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  PocketDisplayJoePhone:
+    type: application
+    platform: iOS
+    sources: [Shared, Phone]
+    info:
+      path: Phone/Info.plist
+      properties:
+        NSBonjourServices: ["_pocketdisplay._tcp"]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX).phone
+        PRODUCT_NAME: PocketDisplayJoe
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIRequiresFullScreen: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UIStatusBarHidden: YES
+        INFOPLIST_KEY_CFBundleDisplayName: PocketDisplayJoe
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: PocketDisplayJoe uses your local network to connect your iPhone and your Mac over Wi-Fi.
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  PocketDisplayJoeMac:
+    type: application
+    platform: macOS
+    sources: [Shared, Mac]
+    info:
+      path: Mac/Info.plist
+      properties:
+        NSBonjourServices: ["_pocketdisplay._tcp"]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX).mac
+        PRODUCT_NAME: PocketDisplayJoe
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_LSUIElement: YES
+        INFOPLIST_KEY_CFBundleDisplayName: PocketDisplayJoe
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: PocketDisplayJoe uses your local network to connect your iPhone and your Mac over Wi-Fi.
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: NO
+        SWIFT_OBJC_BRIDGING_HEADER: Mac/Bridging.h
+  PocketDisplayJoeTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Shared, Tests]
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: $(BUNDLE_ID_PREFIX).tests
+schemes:
+  PocketDisplayJoeMac:
+    build: { targets: { PocketDisplayJoeMac: all } }
+    test: { targets: [PocketDisplayJoeTests] }
+  PocketDisplayJoePhone:
+    build: { targets: { PocketDisplayJoePhone: all } }

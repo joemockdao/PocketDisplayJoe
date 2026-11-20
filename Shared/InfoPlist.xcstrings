@@ -1,0 +1,41 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSLocalNetworkUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PocketDisplayJoe nutzt dein lokales Netzwerk, um iPhone und Mac per WLAN zu verbinden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PocketDisplayJoe uses your local network to connect your iPhone and your Mac over Wi-Fi."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PocketDisplayJoe usa tu red local para conectar el iPhone y el Mac por Wi-Fi."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PocketDisplayJoe utilise votre réseau local pour connecter l'iPhone et le Mac en Wi-Fi."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PocketDisplayJoe usa la rete locale per collegare iPhone e Mac via Wi-Fi."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
